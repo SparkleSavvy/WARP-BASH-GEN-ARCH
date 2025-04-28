@@ -21,7 +21,7 @@
 Для генерации конфигурации просто скопируйте и выполните следующую команду в вашем терминале Arch Linux:
 
 ```bash
-bash <(wget --inet4-only -qO- https://raw.githubusercontent.com/SparkleSavvy/WARP-BASH-GEN-ARCH/main/script.sh)
+bash <(wget --inet4-only -qO- https://raw.githubusercontent.com/SparkleSavvy/WARP-BASH-GEN-ARCH/main/arch.sh)
 ```
 
 ## Что делает скрипт
