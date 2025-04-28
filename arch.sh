@@ -35,5 +35,9 @@ echo -e "\n\n########## КОНФИГ WIREGUARD ##########"
 echo "${conf}"
 echo -e "#######################################\n"
 
+conf_base64=$(echo -n "${conf}" | base64 -w 0)
+echo "Скачать конфиг файлом: https://immalware.vercel.app/download?filename=WARP.conf&content=${conf_base64}"
+echo -e "\n"
+
 echo "QR-код для подключения:"
 echo "$conf" | qrencode -t utf8
