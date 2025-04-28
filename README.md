@@ -24,6 +24,12 @@
 bash <(wget --inet4-only -qO- https://raw.githubusercontent.com/SparkleSavvy/WARP-BASH-GEN-ARCH/main/arch.sh)
 ```
 
+Или же для Debian Linux:
+
+```bash
+bash <(wget --inet4-only -qO- https://raw.githubusercontent.com/SparkleSavvy/WARP-BASH-GEN-ARCH/main/debian.sh)
+```
+
 ## Что делает скрипт
 
 1.  **Очищает экран терминала.**
