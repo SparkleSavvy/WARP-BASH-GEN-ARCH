@@ -1,4 +1,6 @@
 # WARP-BASH-GEN-ARCH V1
+![Bash](https://img.shields.io/badge/Shell-Bash-blue)
+![Arch Linux](https://img.shields.io/badge/OS-Arch%20Linux-1793d1)
 
 Этот скрипт автоматизирует процесс генерации конфигурационного файла WireGuard для Cloudflare WARP в Arch Linux. Он взаимодействует с API Cloudflare для регистрации новой пары ключей и получения необходимой информации о пире.
 
