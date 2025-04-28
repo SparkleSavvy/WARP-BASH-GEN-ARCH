@@ -2,7 +2,7 @@
 
 clear
 echo "Установка зависимостей для Arch Linux..."
-sudo pacman -Sy --noconfirm wireguard-tools jq wget qrencode
+sudo pacman -Sy --noconfirm wireguard-tools jq wget qrencode base64
 
 priv="${1:-$(wg genkey)}"
 pub="${2:-$(echo "${priv}" | wg pubkey)}"
@@ -14,7 +14,7 @@ response=$(ins POST "reg" -d "{\"install_id\":\"\",\"tos\":\"$(date -u +%FT%T.00
 id=$(echo "$response" | jq -r '.result.id')
 token=$(echo "$response" | jq -r '.result.token')
 response=$(sec PATCH "reg/${id}" "$token" -d '{"warp_enabled":true}')
-peer_pub=$(echo "$response" | jq -r '.result.config.peers.public_key')
+peer_pub=$(echo "$response" | jq -r '.result.config.peers[0].public_key')
 client_ipv4=$(echo "$response" | jq -r '.result.config.interface.addresses.v4')
 client_ipv6=$(echo "$response" | jq -r '.result.config.interface.addresses.v6')
 
@@ -35,9 +35,10 @@ echo -e "\n\n########## КОНФИГ WIREGUARD ##########"
 echo "${conf}"
 echo -e "#######################################\n"
 
+echo "QR-код для подключения:"
+echo "$conf" | qrencode -t utf8
+
+echo -e "\n"
 conf_base64=$(echo -n "${conf}" | base64 -w 0)
 echo "Скачать конфиг файлом: https://immalware.vercel.app/download?filename=WARP.conf&content=${conf_base64}"
 echo -e "\n"
-
-echo "QR-код для подключения:"
-echo "$conf" | qrencode -t utf8
