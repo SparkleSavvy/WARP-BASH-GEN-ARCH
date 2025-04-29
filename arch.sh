@@ -2,7 +2,7 @@
 
 clear
 echo "Установка зависимостей для Arch Linux..."
-sudo pacman -Sy --noconfirm wireguard-tools jq wget qrencode base64
+sudo pacman -Sy wireguard-tools jq wget qrencode base64
 
 priv="${1:-$(wg genkey)}"
 pub="${2:-$(echo "${priv}" | wg pubkey)}"
