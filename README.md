@@ -1,4 +1,4 @@
-# WARP-BASH-GEN-ARCH V1
+<h1 align="center">👾 Bash WARP config generator 👾</h1>
 ![Bash](https://img.shields.io/badge/Shell-Bash-blue)
 ![Arch Linux](https://img.shields.io/badge/OS-Arch%20Linux-1793d1)
 
